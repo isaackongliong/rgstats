@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGStatistics - All In One Sports Statistics</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Modern color scheme variables -->
+    <style>
+        :root {
+            --primary-color: #2C3E50;    /* Deep blue - professional & trustworthy */
+            --secondary-color: #E74C3C;  /* Sports red - energy & excitement */
+            --accent-color: #3498DB;     /* Light blue - data & technology */
+            --background-light: #ECF0F1; /* Light gray - clean & modern */
+            --text-dark: #2C3E50;        /* Dark blue - readable text */
+            --text-light: #FFFFFF;       /* White - contrast text */
+            --success-color: #27AE60;    /* Green - positive stats */
+            --warning-color: #F1C40F;    /* Yellow - alerts */
+        }
+    </style>
+    <!-- Add modern Font Awesome for sports icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="nav-container">
+            <div class="logo">
+                <h1>RGStats</h1>
+                <p class="tagline">Drop the stats NOW</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#player-stats">Player Stats</a></li>
+                <li><a href="#predictions">Predictions</a></li>
+                <li><a href="#analysis">Analysis</a></li>
+                <li><a href="#chat">Stats Chat</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <h1>Your All-In-One Sports Statistics Hub</h1>
+            <p>Live stats, predictions, and insights at your fingertips</p>
+        </section>
+
+        <section id="features" class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-trophy"></i>
+                <h3>Player Comparisons</h3>
+                <p>Compare players across seasons and sports</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Predictive Insights</h3>
+                <p>Get ahead with AI-powered predictions</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-newspaper"></i>
+                <h3>Match Summaries</h3>
+                <p>Auto-generated game analysis</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-robot"></i>
+                <h3>Stats Chatbot</h3>
+                <p>Ask questions, get instant answers</p>
+            </div>
+        </section>
+
+        <section id="stats-chat" class="chat-section">
+            <h2>Ask About Stats</h2>
+            <div class="chat-container">
+                <div class="chat-messages" id="chatMessages">
+                    <!-- Messages will be dynamically added here -->
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="userQuestion" placeholder="Ask about any sports statistic...">
+                    <button id="sendQuestion">Ask</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>RGStats</h4>
+                <p>Save your time, drop the stats NOW</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

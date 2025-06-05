@@ -1,0 +1,17 @@
+{
+  "name": "rgstatistics",
+  "version": "1.0.0",
+  "description": "All-in-one sports statistics tracking website with AI chatbot",
+  "scripts": {
+    "start": "flowise start",
+    "dev": "flowise start",
+    "web": "live-server --port=8080"
+  },
+  "dependencies": {
+    "flowise": "^1.0.0",
+    "axios": "^1.4.0"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

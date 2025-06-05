@@ -1,0 +1,4 @@
+.env
+.flowise/
+node_modules/
+logs/
