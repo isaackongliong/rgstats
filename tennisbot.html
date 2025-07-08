@@ -30,6 +30,15 @@
       box-shadow: 0 2px 12px #2c3e5040;
     }
 
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.2rem 2rem;
+    }
+
     .logo h1 {
       color: var(--text-light);
       margin: 0;
@@ -41,90 +50,29 @@
       margin: 0;
     }
 
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
 
-        .nav-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1.2rem 2rem;
-        }
-        .logo h1 {
-            color: var(--text-light);
-            margin: 0;
-        }
-        .tagline {
-            color: var(--accent-color);
-            font-size: 1rem;
-            margin: 0;
-        }
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 1.5rem;
-            margin: 0;
-            padding: 0;
-            position: relative;
-        }
-        .nav-links > li {
-            position: relative;
-        }
-        .nav-links a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.08rem;
-            padding: 0.4rem 1.1rem;
-            border-radius: 0.7rem;
-            transition: background 0.2s, color 0.2s;
-            display: flex;
-            align-items: center;
-        }
-        .nav-links a.active,
-        .nav-links a:hover {
-            background: var(--accent-color);
-            color: #fff;
-        }
-        .dropdown {
-            position: relative;
-        }
-        .dropbtn {
-            cursor: pointer;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background: #fff;
-            min-width: 160px;
-            box-shadow: 0 8px 16px rgba(44,62,80,0.12);
-            border-radius: 0.7rem;
-            z-index: 100;
-            top: 110%;
-            left: 0;
-            padding: 0.5rem 0;
-        }
-        .dropdown-content li {
-            width: 100%;
-        }
-        .dropdown-content a {
-            color: var(--primary-color);
-            background: none;
-            border-radius: 0;
-            padding: 0.7rem 1.2rem;
-            font-size: 1.05rem;
-            font-weight: 500;
-            width: 100%;
-            display: block;
-            transition: background 0.2s, color 0.2s;
-        }
-        .dropdown-content a:hover {
-            background: var(--accent-color);
-            color: #fff;
-        }
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
+    .nav-links a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.08rem;
+      padding: 0.4rem 1.1rem;
+      border-radius: 0.7rem;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .nav-links a.active,
+    .nav-links a:hover {
+      background: var(--accent-color);
+      color: #fff;
+    }
 
     .tennis-hero {
       background: linear-gradient(120deg, #3498db 60%, #2c3e50 100%);
@@ -206,29 +154,22 @@
 </head>
 
 <body>
-      <header class="main-header">
-        <nav class="nav-container">
-            <div class="logo">
-                <h1>RGStats</h1>
-                <p class="tagline">Drop the stats NOW</p>
-            </div>
-            <ul class="nav-links">
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">Sports <i class="fas fa-caret-down"></i></a>
-                    <ul class="dropdown-content">
-                        <li><a href="swimming-stats.html">Swimming</a></li>
-                        <li><a href="tennisbot.html" class="active">Tennis</a></li>
-                        <!-- Add more sports here -->
-                    </ul>
-                </li>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#player-stats">Player Stats</a></li>
-                <li><a href="#predictions">Predictions</a></li>
-                <li><a href="#analysis">Analysis</a></li>
-                <li><a href="#chat">Stats Chat</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header class="main-header">
+    <nav class="nav-container">
+      <div class="logo">
+        <h1>RGStats</h1>
+        <p class="tagline">Drop the stats NOW</p>
+      </div>
+      <ul class="nav-links">
+        <li><a href="tennis-stats.html" class="active">Tennis</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#rankings">Rankings</a></li>
+        <li><a href="#predictions">Predictions</a></li>
+        <li><a href="#analysis">Analysis</a></li>
+        <li><a href="#chat">TennisBot</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <main>
     <section class="tennis-hero">
