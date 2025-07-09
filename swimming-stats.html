@@ -17,19 +17,30 @@
             --success-color: #27AE60;
             --warning-color: #F1C40F;
         }
-        .main-header {
-            background: var(--primary-color);
-            color: var(--text-light);
-            box-shadow: 0 2px 12px #2c3e5040;
+        html, body {
+            font-family: Helvetica, Arial, sans-serif;
         }
-        
+        html, body {
+            font-family: Helvetica, Arial, sans-serif;
+        }
+        .main-header {
+            background: #1d1d1d;
+            color: var(--text-light);
+            box-shadow: 0 2px 12px #63656640;
+            padding: 0;
+            height: 84px;
+        }
         .nav-container {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: flex-start;
             max-width: 1200px;
-            margin: 0 auto;
-            padding: 1.2rem 2rem;
+            margin: 0;
+            padding: 0;
+            height: 84px;
+        }
+        .nav-links {
+            margin-left: auto;
         }
         .logo h1 {
             color: var(--text-light);
@@ -45,73 +56,132 @@
             display: flex;
             gap: 1.5rem;
             margin: 0;
-            padding: 0;
             position: relative;
+           
         }
+
         .nav-links > li {
             position: relative;
         }
         .nav-links a {
             color: var(--text-light);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: normal;
             font-size: 1.08rem;
             padding: 0.4rem 1.1rem;
             border-radius: 0.7rem;
             transition: background 0.2s, color 0.2s;
             display: flex;
             align-items: center;
+            
         }
         .nav-links a.active,
         .nav-links a:hover {
-            background: var(--accent-color);
+            
             color: #fff;
         }
-        .dropdown {
-            position: relative;
-        }
-        .dropbtn {
-            cursor: pointer;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background: #fff;
-            min-width: 160px;
-            box-shadow: 0 8px 16px rgba(44,62,80,0.12);
-            border-radius: 0.7rem;
-            z-index: 100;
-            top: 110%;
-            left: 0;
-            padding: 0.5rem 0;
-        }
-        .dropdown-content li {
-            width: 100%;
-        }
-        .dropdown-content a {
-            color: var(--primary-color);
+
+        /* When hovering a nav link, fade other links to light grey */
+        .nav-links:hover a:not(:hover) {
             background: none;
-            border-radius: 0;
-            padding: 0.7rem 1.2rem;
-            font-size: 1.05rem;
-            font-weight: 500;
-            width: 100%;
-            display: block;
-            transition: background 0.2s, color 0.2s;
+            color: #bbb;
+            transition: color 0.2s;
         }
-        .dropdown-content a:hover {
-            background: var(--accent-color);
-            color: #fff;
-        }
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
+
         .swim-hero {
-            background: linear-gradient(120deg, #3498db 60%, #2c3e50 100%);
-            color: #fff;
-            padding: 3rem 1rem 2rem 1rem;
+            background: #fff;
+            color: #111;
+            padding: 3.5rem 1.5rem 2.5rem 1.5rem;
             text-align: center;
             border-radius: 0 0 2rem 2rem;
+            box-shadow: 0 2px 16px #2c3e5012;
+        }
+        .swim-hero-content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            align-items: stretch;
+            justify-content: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            height: 500px;
+            min-height: 350px;
+        }
+        .swim-hero-content {
+            flex: 2 1 600px;
+            min-width: 340px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            height: 100%;
+            font-size: 1.25rem;
+        }
+        .swim-hero-img {
+            width: 100%;
+            max-width: 480px;
+            min-width: 260px;
+            border-radius: 1.2rem;
+            box-shadow: 0 2px 12px #2c3e5040;
+            flex: 1 1 380px;
+        }
+        .swim-hero-text {
+            flex: 2 1 340px;
+            text-align: left;
+            min-width: 260px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .swim-hero-text h1 {
+            font-size: 3.1rem;
+            margin-bottom: 1.1rem;
+            color: #111;
+            font-weight: normal;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 8px #0001;
+        }
+        .swim-hero-text p {
+            font-size: 1.35rem;
+            line-height: 1.8;
+            color: #222;
+            max-width: 600px;
+            font-weight: normal;
+        }
+        .chat-bot-content {
+            flex: 1 1 340px;
+            min-width: 320px;
+            max-width: 500px;
+            background: #f7f8fa;
+            border-radius: 1.2rem;
+            box-shadow: 0 2px 12px #2c3e5012;
+            padding: 1.5rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100%;
+        }
+        @media (max-width: 1200px) {
+            .swim-hero-content-wrapper {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            .chat-bot-content {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+        @media (max-width: 900px) {
+            .swim-hero-content {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            .swim-hero-text {
+                text-align: center;
+                align-items: center;
+            }
         }
         .swim-features {
             display: flex;
@@ -151,116 +221,239 @@
 <body>
     <header class="main-header">
         <nav class="nav-container">
-            <div class="logo">
-                <h1>RGStats</h1>
-                <p class="tagline">Drop the stats NOW</p>
+            <div class="logo" style="height: 100%; display: flex; align-items: center;">
+                <img src="RGstats.jpg" alt="RGStats Logo" style="height: 100%; max-height: 88px; width: auto; vertical-align: middle; border-radius: 0.5rem; box-shadow: 0 2px 8px #2c3e5022; display: inline-block; object-fit: contain;">
             </div>
             <ul class="nav-links">
-                                <li class="dropdown">
-                    <a href="#" class="dropbtn">Sports <i class="fas fa-caret-down"></i></a>
-                    <ul class="dropdown-content">
-                        <li><a href="swimming-stats.html">Swimming</a></li>
-                        <li><a href="tennisbot.html">Tennis</a></li>
-                        <!-- Add more sports here -->
-                    </ul>
-                </li>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#player-stats">Player Stats</a></li>
-                <li><a href="#predictions">Predictions</a></li>
-                <li><a href="#analysis">Analysis</a></li>
-                <li><a href="#chat">Stats Chat</a></li>
+                <li><a href="swimming-stats.html">Swimming</a></li>
+                <li><a href="tennisbot.html">Tennis</a></li>
+                <li><a href="soccer.html">Soccer</a></li>
+                <li><a href="handball.html">Handball</a></li>
             </ul>
         </nav>
     </header>
+    <div>
+    <!--create a banner for images (carousel)-->
+    <div class="banner-carousel" style="width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;overflow:hidden;">
+        <div class="carousel-track" style="display:flex;transition:transform 0.5s;height:100vh;min-height:400px;">
+            <img src="https://swimswam.com/wp-content/uploads/2016/12/Michael-Phelps-by-Mike-Lewis-2.jpg" alt="Swimming Banner 1" style="width:100vw;height:100vh;min-height:400px;object-fit:cover;flex:0 0 100vw;border-radius:0;box-shadow:none;">
+            <img src="https://img.olympics.com/images/image/private/t_s_pog_staticContent_hero_xl_2x/f_auto/primary/hhfs9tf9mck02d8ilnqq" alt="Banner 2" style="width:100vw;height:100vh;min-height:400px;object-fit:cover;flex:0 0 100vw;border-radius:0;box-shadow:none;">
+            <img src="https://cdn.britannica.com/01/193601-050-F8F18A9B/Katie-Ledecky-American-lead-way-women-world-2016.jpg" alt="Banner 3" style="width:100vw;height:100vh;min-height:400px;object-fit:cover;flex:0 0 100vw;border-radius:0;box-shadow:none;">
+        </div>
+        <button class="carousel-btn prev" style="position:absolute;top:50%;left:2vw;transform:translateY(-50%);background:#fff;border:none;border-radius:50%;width:40px;height:40px;box-shadow:0 2px 8px #2c3e5022;cursor:pointer;font-size:1.5rem;z-index:2;">&#8592;</button>
+        <button class="carousel-btn next" style="position:absolute;top:50%;right:2vw;transform:translateY(-50%);background:#fff;border:none;border-radius:50%;width:40px;height:40px;box-shadow:0 2px 8px #2c3e5022;cursor:pointer;font-size:1.5rem;z-index:2;">&#8594;</button>
+        <script>
+        (function() {
+            const track = document.querySelector('.banner-carousel .carousel-track');
+            const slides = track.children;
+            let current = 0;
+            function updateCarousel() {
+                track.style.transform = `translateX(-${current * 100}%)`;
+            }
+            document.querySelector('.banner-carousel .prev').onclick = function() {
+                current = (current - 1 + slides.length) % slides.length;
+                updateCarousel();
+            };
+            document.querySelector('.banner-carousel .next').onclick = function() {
+                current = (current + 1) % slides.length;
+                updateCarousel();
+            };
+        })();
+        </script>
+    </div>
+    <div>
+        <!--div for latest news-->
+        <section class="latest-news-section" style="max-width:1400px;margin:2.5rem auto 0 auto;padding:0 1.5rem;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;">
+                <h2 style="font-size:2.8rem;font-weight:normal;letter-spacing:1px;color:#222;margin:0;">Latest News</h2>
+                <a href="#" style="color:#1976d2;font-size:1.15rem;text-decoration:none;display:flex;align-items:center;gap:0.4rem;font-weight:500;">More News <span style="font-size:1.3rem;">&rarr;</span></a>
+            </div>
+            <div class="news-cards-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;">
+                <div class="news-card" style="background:#fff;border-radius:1.1rem;box-shadow:0 2px 12px #e0e7ef;padding:0 0 1.2rem 0;display:flex;flex-direction:column;overflow:hidden;">
+                    <img src="https://resources.fina.org/photo-resources/2025/06/20/a7f3e351-5089-49a1-84ef-afdb7a27f352/GettyImages-2165834840.jpg?width=684&height=384" alt="Diving" style="width:100%;height:200px;object-fit:cover;">
+                    <div style="padding:1.2rem 1.1rem 0.5rem 1.1rem;flex:1;display:flex;flex-direction:column;">
+                        <div style="font-size:1.45rem;color:#222;font-weight:normal;line-height:1.2;margin-bottom:0.7rem;">9 cool things about Chen Yiwen</div>
+                        <div style="margin-top:auto;display:flex;align-items:center;justify-content:space-between;font-size:1rem;color:#888;">
+                            <span>⏱️ 22hrs · #Diving</span>
+                            <span style="font-size:1.5rem;color:#00b4d8;">&#129342;</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-card" style="background:#fff;border-radius:1.1rem;box-shadow:0 2px 12px #e0e7ef;padding:0 0 1.2rem 0;display:flex;flex-direction:column;overflow:hidden;">
+                    <img src="https://resources.fina.org/photo-resources/2025/07/07/79dbd1ea-bac2-43dd-9877-51bcbbbc2e33/Team-Acrobatic-_-Artistic-Swimming-World-Cup-2025-Super-Final-_-Xi_an_Original-Image_m117465.JPG?width=684&height=384" alt="Synchro Webinar" style="width:100%;height:200px;object-fit:cover;">
+                    <div style="padding:1.2rem 1.1rem 0.5rem 1.1rem;flex:1;display:flex;flex-direction:column;">
+                        <div style="font-size:1.45rem;color:#222;font-weight:normal;line-height:1.2;margin-bottom:0.7rem;">Aquatics Integrity Unit holds Safeguarding Webinar for World...</div>
+                        <div style="margin-top:auto;display:flex;align-items:center;justify-content:space-between;font-size:1rem;color:#888;">
+                            <span>🕒 1d</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-card" style="background:#fff;border-radius:1.1rem;box-shadow:0 2px 12px #e0e7ef;padding:1.2rem 1.1rem 1.2rem 1.1rem;display:flex;flex-direction:column;overflow:hidden;align-items:center;justify-content:center;min-height:260px;">
+                    <canvas id="newsChart" width="320" height="180"></canvas>
+                    <script>
+                    // Chart.js CDN loader (only loads once)
+                    if (!window.Chart) {
+                        var script = document.createElement('script');
+                        script.src = 'https://cdn.jsdelivr.net/npm/chart.js';
+                        script.onload = function() {
+                            renderNewsChart();
+                        };
+                        document.head.appendChild(script);
+                    } else {
+                        renderNewsChart();
+                    }
+                    function renderNewsChart() {
+                        if (window.newsChartInstance) return; // Prevent duplicate
+                        var ctx = document.getElementById('newsChart').getContext('2d');
+                        window.newsChartInstance = new Chart(ctx, {
+                            type: 'bar',
+                            data: {
+                                labels: ['Joseph Schooling', 'Caeleb Dressel', 'Kristof Milak', 'Adam Peaty', 'Katie Ledecky'],
+                                datasets: [{
+                                    label: 'Freestyle 50m (seconds)',
+                                    data: [22.00, 21.04, 21.57, 22.15, 23.45],
+                                    backgroundColor: ['#1976d2','#00b4d8','#43aa8b','#f9c846','#e74c3c'],
+                                    borderRadius: 6
+                                }]
+                            },
+                            options: {
+                                plugins: { legend: { display: false } },
+                                scales: {
+                                    x: { grid: { display: false }, title: { display: true, text: 'Swimmer' } },
+                                    y: { beginAtZero: false, grid: { color: '#eee' }, title: { display: true, text: 'Time (s)' } }
+                                },
+                                responsive: false,
+                                maintainAspectRatio: false,
+                                animation: false
+                            }
+                        });
+                    }
+                    </script>
+                </div>
+ 
+            </div>
+        </section>
+    </div>
+    <!-- Add padding between Latest News and Swim Hero -->
+    <div style="height: 3.5rem;"></div>
     <main>
         <section class="swim-hero">
-            <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2.5rem; max-width: 1100px; margin: 0 auto;">
-                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Welcome to Swimming" style="width:100%;max-width:380px;min-width:220px;border-radius:1.5rem;box-shadow:0 2px 12px #2c3e5040;flex:1 1 320px;">
-                <div style="flex:2 1 340px;text-align:left;min-width:260px;">
-                    <h1 style="font-size:2.3rem;margin-bottom:0.7rem;color:#fff;font-weight:800;letter-spacing:1px;">Welcome to Swimming!</h1>
-                    <p style="font-size:1.18rem;line-height:1.7;color:#eaf6fb;max-width:520px;">Are you new to swimming? You're in the right place! Whether you're just starting out or looking to improve, our beginner-friendly guides, tips, and stats will help you dive in with confidence.<br><br>
-                    <span style="color:#f1c40f;font-weight:600;">Explore the basics</span>, learn about gear, and get inspired by real swimmers' stories. Let's make your swimming journey fun and rewarding!</p>
+            <div class="swim-hero-content-wrapper" style="height: 500px; min-height: 350px;">
+                <div class="swim-hero-content" style="width:100%;display:flex;justify-content:center;align-items:center;">
+                  <table style="width:100%;max-width:800px;margin:auto;border-collapse:collapse;box-shadow:0 4px 16px #2c3e5012;background:#fff;font-size:1.15rem;">
+                    <thead>
+                      <tr>
+                        <th style="background:#75797d;color:#fff;padding:14px 20px;text-align:left;">Name</th>
+                        <th style="background:#75797d;color:#fff;padding:14px 20px;text-align:left;">Race</th>
+                        <th style="background:#75797d;color:#fff;padding:14px 20px;text-align:left;">Timing</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr style="border-bottom:1px solid #e0e0e0;">
+                        <td>Caeleb Dressel</td>
+                        <td>100m Freestyle (Tokyo 2020)</td>
+                        <td>47.02s</td>
+                      </tr>
+                      <tr style="border-bottom:1px solid #e0e0e0;">
+                        <td>Caeleb Dressel</td>
+                        <td>100m Butterfly (Tokyo 2020)</td>
+                        <td>49.45s (WR)</td>
+                      </tr>
+                      <tr style="border-bottom:1px solid #e0e0e0;">
+                        <td>Kristóf Milák</td>
+                        <td>200m Butterfly (Worlds 2022)</td>
+                        <td>1:50.34 (WR)</td>
+                      </tr>
+                      <tr style="border-bottom:1px solid #e0e0e0;">
+                        <td>Katie Ledecky</td>
+                        <td>800m Freestyle (Tokyo 2020)</td>
+                        <td>8:12.57</td>
+                      </tr>
+                      <tr style="border-bottom:1px solid #e0e0e0;">
+                        <td>Katie Ledecky</td>
+                        <td>1500m Freestyle (Tokyo 2020)</td>
+                        <td>15:37.34</td>
+                      </tr>
+                      <tr style="border-bottom:1px solid #e0e0e0;">
+                        <td>Ariarne Titmus</td>
+                        <td>400m Freestyle (Tokyo 2020)</td>
+                        <td>3:56.69</td>
+                      </tr>
+                      <tr style="border-bottom:1px solid #e0e0e0;">
+                        <td>Leon Marchand</td>
+                        <td>400m Individual Medley (2023)</td>
+                        <td>4:02.50 (WR)</td>
+                      </tr>
+                      <tr style="border-bottom:1px solid #e0e0e0;">
+                        <td>Sarah Sjöström</td>
+                        <td>50m Freestyle (Worlds 2023)</td>
+                        <td>23.61s</td>
+                      </tr>
+                      <tr style="border-bottom:1px solid #e0e0e0;">
+                        <td>Zhang Yufei</td>
+                        <td>200m Butterfly (Tokyo 2020)</td>
+                        <td>2:03.86</td>
+                      </tr>
+                      <tr>
+                        <td>Adam Peaty</td>
+                        <td>100m Breaststroke (Tokyo 2020)</td>
+                        <td>57.37s</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="chat-bot-content">
+                    <!-- In your <head> tag -->
+<script src="https://cdn.botpress.cloud/webchat/v3.0/inject.js"></script>
+<style>
+  #webchat .bpWebchat {
+    position: unset;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+  #webchat .bpFab {
+    display: none;
+  }
+</style>
+
+<!-- Put this on your page BEFORE the script below -->
+<div id="webchat" style="width: 100%; min-width: 250px; height: 100%;"></div>
+
+<!-- In your <body> tag -->
+<script>
+  window.botpress.on("webchat:ready", () => {
+    window.botpress.open();
+  });
+  window.botpress.init({
+  "botId": "14b6699e-0cab-496a-bc8e-d471be03ce08",
+  "configuration": {
+    "version": "v1",
+    "botName": "Swimming help bot",
+    "website": {},
+    "email": {},
+    "phone": {},
+    "termsOfService": {},
+    "privacyPolicy": {},
+    "color": "#3276EA",
+    "variant": "solid",
+    "headerVariant": "glass",
+    "themeMode": "light",
+    "fontFamily": "inter",
+    "radius": 4,
+    "feedbackEnabled": false,
+    "footer": "[⚡ by Botpress](https://botpress.com/?from=webchat)"
+  },
+  "clientId": "2e43ef4e-74c6-429f-a492-6dd1dcaf984f",
+  "selector": "#webchat"
+});
+</script>
                 </div>
             </div>
         </section>
-        <section class="swim-features">
-            <div class="swim-feature-card">
-                <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=400&q=80" alt="Kids learning to swim" style="width:100%;border-radius:1rem;margin-bottom:1rem;">
-                <h3>Getting Started</h3>
-                <p>Discover swimming basics, safety tips, and how to get comfortable in the water.</p>
-            </div>
-            <div class="swim-feature-card">
-                <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Swimming lesson" style="width:100%;border-radius:1rem;margin-bottom:1rem;">
-                <h3>Beginner Lessons</h3>
-                <p>Step-by-step guides and videos for your first strokes, floating, and breathing techniques.</p>
-            </div>
-            <div class="swim-feature-card">
-                <img src="https://images.pexels.com/photos/261185/pexels-photo-261185.jpeg?auto=compress&w=400" alt="Happy swimmer" style="width:100%;border-radius:1rem;margin-bottom:1rem;">
-                <h3>Fun & Motivation</h3>
-                <p>Read stories from new swimmers and find out how swimming can be fun for everyone!</p>
-            </div>
-            <div class="swim-feature-card">
-                <img src="https://images.pexels.com/photos/61129/pexels-photo-61129.jpeg?auto=compress&w=400" alt="Pool fun" style="width:100%;border-radius:1rem;margin-bottom:1rem;">
-                <h3>Join the Community</h3>
-                <p>Connect with others, ask questions, and share your progress in our friendly swimming community.</p>
-            </div>
-        </section>
-        <section class="swim-features" style="margin-top:2rem;">
-            <div class="swim-feature-card">
-                <i class="fas fa-swimmer"></i>
-                <h3>Live Meet Results</h3>
-                <p>Track real-time results from major swimming competitions worldwide.</p>
-            </div>
-            <div class="swim-feature-card">
-                <i class="fas fa-chart-bar"></i>
-                <h3>Performance Analytics</h3>
-                <p>Analyze swimmer stats, trends, and personal bests with interactive charts.</p>
-            </div>
-            <div class="swim-feature-card">
-                <i class="fas fa-medal"></i>
-                <h3>Records & Rankings</h3>
-                <p>Stay updated with the latest world, national, and age group records.</p>
-            </div>
-            <div class="swim-feature-card">
-                <i class="fas fa-newspaper"></i>
-                <h3>Swimming News</h3>
-                <p>Read breaking news, interviews, and expert analysis from the poolside.</p>
-            </div>
-        </section>
-        <section class="swim-news">
-            <h3 style="display:flex;align-items:center;gap:0.7rem;font-size:2.1rem;color:#0077b6;font-weight:900;letter-spacing:1px;margin-bottom:1.5rem;">
-                <i class="fas fa-bolt" style="color:#e74c3c;font-size:2.2rem;animation:flash 1.2s infinite alternate;"></i> Latest Swimming Headlines
-            </h3>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;max-width:700px;margin:0 auto;">
-                <div style="background:#fff;border-radius:1.1rem;box-shadow:0 2px 12px #3498db22;padding:1.3rem 1.1rem;display:flex;align-items:flex-start;gap:1rem;position:relative;overflow:hidden;">
-                    <span style="background:#3498db;color:#fff;border-radius:50%;width:2.3rem;height:2.3rem;display:flex;align-items:center;justify-content:center;font-size:1.3rem;box-shadow:0 2px 8px #3498db33;"><i class="fas fa-trophy"></i></span>
-                    <div>
-                        <div style="font-weight:700;color:#2c3e50;font-size:1.13rem;">World Championships</div>
-                        <div style="color:#555;font-size:1.01rem;">New world record set in the 100m freestyle final!</div>
-                    </div>
-                </div>
-                <div style="background:#fff;border-radius:1.1rem;box-shadow:0 2px 12px #3498db22;padding:1.3rem 1.1rem;display:flex;align-items:flex-start;gap:1rem;position:relative;overflow:hidden;">
-                    <span style="background:#27ae60;color:#fff;border-radius:50%;width:2.3rem;height:2.3rem;display:flex;align-items:center;justify-content:center;font-size:1.3rem;box-shadow:0 2px 8px #27ae6033;"><i class="fas fa-star"></i></span>
-                    <div>
-                        <div style="font-weight:700;color:#2c3e50;font-size:1.13rem;">Olympic Trials</div>
-                        <div style="color:#555;font-size:1.01rem;">Rising stars make a splash with personal bests.</div>
-                    </div>
-                </div>
-                <div style="background:#fff;border-radius:1.1rem;box-shadow:0 2px 12px #3498db22;padding:1.3rem 1.1rem;display:flex;align-items:flex-start;gap:1rem;position:relative;overflow:hidden;">
-                    <span style="background:#f1c40f;color:#fff;border-radius:50%;width:2.3rem;height:2.3rem;display:flex;align-items:center;justify-content:center;font-size:1.3rem;box-shadow:0 2px 8px #f1c40f33;"><i class="fas fa-lightbulb"></i></span>
-                    <div>
-                        <div style="font-weight:700;color:#2c3e50;font-size:1.13rem;">Training Tips</div>
-                        <div style="color:#555;font-size:1.01rem;">How to improve your butterfly technique this season.</div>
-                    </div>
-                </div>
-                <div style="background:#fff;border-radius:1.1rem;box-shadow:0 2px 12px #3498db22;padding:1.3rem 1.1rem;display:flex;align-items:flex-start;gap:1rem;position:relative;overflow:hidden;">
-                    <span style="background:#e67e22;color:#fff;border-radius:50%;width:2.3rem;height:2.3rem;display:flex;align-items:center;justify-content:center;font-size:1.3rem;box-shadow:0 2px 8px #e67e2233;"><i class="fas fa-user"></i></span>
-                    <div>
-                        <div style="font-weight:700;color:#2c3e50;font-size:1.13rem;">Exclusive</div>
-                        <div style="color:#555;font-size:1.01rem;">Interview with gold medalist Sarah Johnson on her training secrets.</div>
-                    </div>
-                </div>
-            </div>
             <style>
                 @keyframes flash {
                     from { filter: brightness(1.2); }
@@ -289,11 +482,12 @@
                 </ul>
             </div>
         </div>
-        <script src="https://cdn.botpress.cloud/webchat/v3.0/inject.js"></script>
-<script src="https://files.bpcontent.cloud/2025/07/07/07/20250707075543-G9R0NSS9.js"></script>
+        
+
 
     </footer>
 
     <script src="js/app.js"></script>
 </body>
+
 </html>

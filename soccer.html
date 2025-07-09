@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soccer Analytics - RGStats</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2C3E50;
+            --secondary-color: #E74C3C;
+            --accent-color: #27AE60;
+            --background-light: #ECF0F1;
+            --text-dark: #2C3E50;
+            --text-light: #FFFFFF;
+            --success-color: #27AE60;
+            --warning-color: #F1C40F;
+        }
+        html, body {
+            font-family: Helvetica, Arial, sans-serif;
+        }
+
+
+        .logo h1 {
+            color: var(--text-light);
+            margin: 0;
+        }
+        .tagline {
+            color: var(--accent-color);
+            font-size: 1rem;
+            margin: 0;
+        }
+                .main-header {
+            background: #1d1d1d;
+            color: var(--text-light);
+            box-shadow: 0 2px 12px #63656640;
+            padding: 0;
+            height: 84px;
+        }
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            max-width: 1200px;
+            margin: 0;
+            padding: 0;
+            height: 84px;
+        }
+        .nav-links {
+            margin-left: auto;
+        }
+        .logo h1 {
+            color: var(--text-light);
+            margin: 0;
+        }
+        .tagline {
+            color: var(--accent-color);
+            font-size: 1rem;
+            margin: 0;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            margin: 0;
+            position: relative;
+           
+        }
+
+        .nav-links > li {
+            position: relative;
+        }
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: normal;
+            font-size: 1.08rem;
+            padding: 0.4rem 1.1rem;
+            border-radius: 0.7rem;
+            transition: background 0.2s, color 0.2s;
+            display: flex;
+            align-items: center;
+            
+        }
+        .nav-links a.active,
+        .nav-links a:hover {
+            
+            color: #fff;
+        }
+
+        /* When hovering a nav link, fade other links to light grey */
+        .nav-links:hover a:not(:hover) {
+            background: none;
+            color: #bbb;
+            transition: color 0.2s;
+        }
+
+        .soccer-hero {
+          
+            color: #fff;
+            padding: 3rem 1rem 2rem 1rem;
+            text-align: center;
+            border-radius: 0 0 2rem 2rem;
+        }
+        .soccer-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        .soccer-feature-card {
+            background: #ecf0f1;
+            color: #2c3e50;
+            border-radius: 1.2rem;
+            box-shadow: 0 2px 12px #7f5af022;
+            padding: 2rem 1.5rem;
+            max-width: 320px;
+            flex: 1 1 260px;
+            text-align: center;
+        }
+        .soccer-feature-card i {
+            font-size: 2.5rem;
+            color: #27ae60;
+            margin-bottom: 1rem;
+        }
+        .soccer-news {
+            max-width: 700px;
+            margin: 2rem auto;
+            background: #f9fafc;
+            border-radius: 1rem;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 2px 12px #7f5af022;
+        }
+        .soccer-news h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        .soccer-news ul {
+            padding-left: 1.2rem;
+        }
+        .soccer-news li {
+            margin-bottom: 0.7rem;
+            font-size: 1.08rem;
+        }
+        @media (max-width: 900px) {
+            .nav-container, .footer-content {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1.2rem 1rem;
+            }
+            .soccer-features {
+                flex-direction: column;
+                gap: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+        <header class="main-header">
+        <nav class="nav-container">
+            <div class="logo" style="height: 100%; display: flex; align-items: center;">
+                <img src="RGstats.jpg" alt="RGStats Logo" style="height: 100%; max-height: 88px; width: auto; vertical-align: middle; border-radius: 0.5rem; box-shadow: 0 2px 8px #2c3e5022; display: inline-block; object-fit: contain;">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="swimming-stats.html">Swimming</a></li>
+                <li><a href="tennisbot.html">Tennis</a></li>
+                <li><a href="soccer.html">Soccer</a></li>
+                <li><a href="handball.html">Handball</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Soccer Banner Carousel -->
+    <div class="banner-carousel" style="width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;overflow:hidden;">
+        <div class="carousel-track" style="display:flex;transition:transform 0.5s;width:100vw;height:100vh;min-height:320px;">
+            <img src="https://media.cnn.com/api/v1/images/stellar/prod/221219105607-messi-crowd-world-cup-121822.jpg?q=w_3000,c_fill" alt="Soccer Banner 1" style="width:100vw;height:100vh;min-height:320px;object-fit:cover;flex:0 0 100vw;border-radius:0;box-shadow:none;">
+            <img src="https://a1.espncdn.com/combiner/i?img=%2Fphoto%2F2025%2F0708%2Fr1516267_1296x518_5%2D2.jpg&w=1256&h=502&scale=crop&cquality=40&location=center&format=jpg" alt="Soccer Banner 2" style="width:100vw;height:100vh;min-height:320px;object-fit:cover;flex:0 0 100vw;border-radius:0;box-shadow:none;">
+            <img src="https://a1.espncdn.com/combiner/i?img=%2Fphoto%2F2025%2F0526%2Fr1498431_1296x518_5%2D2.jpg&w=1256&h=502&scale=crop&cquality=40&location=center&format=jpg" alt="Soccer Banner 3" style="width:100vw;height:100vh;min-height:320px;object-fit:cover;flex:0 0 100vw;border-radius:0;box-shadow:none;">
+        </div>
+        <button class="carousel-btn prev" style="position:absolute;top:50%;left:2vw;transform:translateY(-50%);background:#fff;border:none;border-radius:50%;width:40px;height:40px;box-shadow:0 2px 8px #2c3e5022;cursor:pointer;font-size:1.5rem;z-index:2;">&#8592;</button>
+        <button class="carousel-btn next" style="position:absolute;top:50%;right:2vw;transform:translateY(-50%);background:#fff;border:none;border-radius:50%;width:40px;height:40px;box-shadow:0 2px 8px #2c3e5022;cursor:pointer;font-size:1.5rem;z-index:2;">&#8594;</button>
+        <script>
+        (function() {
+            const track = document.querySelector('.banner-carousel .carousel-track');
+            const slides = track.children;
+            let current = 0;
+            function updateCarousel() {
+                track.style.transform = `translateX(-${current * 100}%)`;
+            }
+            document.querySelector('.banner-carousel .prev').onclick = function() {
+                current = (current - 1 + slides.length) % slides.length;
+                updateCarousel();
+            };
+            document.querySelector('.banner-carousel .next').onclick = function() {
+                current = (current + 1) % slides.length;
+                updateCarousel();
+            };
+        })();
+        </script>
+    </div>
+    <!-- Latest Soccer News Section -->
+    <section class="latest-news-section" style="max-width:1400px;margin:2.5rem auto 0 auto;padding:0 1.5rem;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;">
+            <h2 style="font-size:2.8rem;font-weight:normal;letter-spacing:1px;color:#222;margin:0;">Latest News</h2>
+            <a href="#" style="color:#1976d2;font-size:1.15rem;text-decoration:none;display:flex;align-items:center;gap:0.4rem;font-weight:500;">More News <span style="font-size:1.3rem;">&rarr;</span></a>
+        </div>
+        <div class="news-cards-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;">
+            <div class="news-card" style="background:#fff;border-radius:1.1rem;box-shadow:0 2px 12px #e0e7ef;padding:0 0 1.2rem 0;display:flex;flex-direction:column;overflow:hidden;">
+                <img src="https://a4.espncdn.com/combiner/i?img=%2Fphoto%2F2025%2F0708%2Fr1516594_1296x518_5%2D2.jpg&w=1256&h=502&scale=crop&cquality=40&location=center&format=jpg" alt="Soccer News 1" style="width:100%;height:200px;object-fit:cover;">
+                <div style="padding:1.2rem 1.1rem 0.5rem 1.1rem;flex:1;display:flex;flex-direction:column;">
+                    <div style="font-size:1.45rem;color:#222;font-weight:normal;line-height:1.2;margin-bottom:0.7rem;">Underdogs Triumph in Champions League</div>
+                    <div style="margin-top:auto;display:flex;align-items:center;justify-content:space-between;font-size:1rem;color:#888;">
+                        <span>⏱️ 22hrs · #ChampionsLeague</span>
+                        <span style="font-size:1.5rem;color:#27ae60;">&#9917;</span>
+                    </div>
+                </div>
+            </div>
+            <div class="news-card" style="background:#fff;border-radius:1.1rem;box-shadow:0 2px 12px #e0e7ef;padding:0 0 1.2rem 0;display:flex;flex-direction:column;overflow:hidden;">
+                <img src="https://a1.espncdn.com/combiner/i?img=%2Fphoto%2F2025%2F0708%2Fr1516456_1296x518_5%2D2.jpg&w=1256&h=502&scale=crop&cquality=40&location=center&format=jpg" alt="Soccer News 2" style="width:100%;height:200px;object-fit:cover;">
+                <div style="padding:1.2rem 1.1rem 0.5rem 1.1rem;flex:1;display:flex;flex-direction:column;">
+                    <div style="font-size:1.45rem;color:#222;font-weight:normal;line-height:1.2;margin-bottom:0.7rem;">Star Striker Signs with Premier League Giants</div>
+                    <div style="margin-top:auto;display:flex;align-items:center;justify-content:space-between;font-size:1rem;color:#888;">
+                        <span>🕒 1d</span>
+                    </div>
+                </div>
+            </div>
+            <div class="news-card" style="background:#fff;border-radius:1.1rem;box-shadow:0 2px 12px #e0e7ef;padding:1.2rem 1.1rem 1.2rem 1.1rem;display:flex;flex-direction:column;overflow:hidden;align-items:center;justify-content:center;min-height:260px;">
+                <canvas id="soccerNewsChart" width="320" height="180"></canvas>
+                <script>
+                if (!window.Chart) {
+                    var script = document.createElement('script');
+                    script.src = 'https://cdn.jsdelivr.net/npm/chart.js';
+                    script.onload = function() {
+                        renderSoccerNewsChart();
+                    };
+                    document.head.appendChild(script);
+                } else {
+                    renderSoccerNewsChart();
+                }
+                function renderSoccerNewsChart() {
+                    if (window.soccerNewsChartInstance) return;
+                    var ctx = document.getElementById('soccerNewsChart').getContext('2d');
+                    window.soccerNewsChartInstance = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: ['Haaland', 'Mbappé', 'Messi', 'Ronaldo', 'Kane'],
+                            datasets: [{
+                                label: 'Goals (2024/25)',
+                                data: [38, 34, 28, 25, 22],
+                                backgroundColor: ['#27ae60','#e74c3c','#3498db','#f1c40f','#8e44ad'],
+                                borderRadius: 6
+                            }]
+                        },
+                        options: {
+                            plugins: { legend: { display: false } },
+                            scales: {
+                                x: { grid: { display: false }, title: { display: true, text: 'Player' } },
+                                y: { beginAtZero: true, grid: { color: '#eee' }, title: { display: true, text: 'Goals' } }
+                            },
+                            responsive: false,
+                            maintainAspectRatio: false,
+                            animation: false
+                        }
+                    });
+                }
+                </script>
+            </div>
+        </div>
+    </section>
+    <div style="height: 3.5rem;"></div>
+    <main>
+        <section class="soccer-hero">
+            <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2.5rem; max-width: 1100px; margin: 0 auto;">
+                <img src="https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?auto=format&fit=crop&w=800&q=80" alt="Welcome to Soccer" style="width:100%;max-width:380px;min-width:220px;border-radius:1.5rem;box-shadow:0 2px 12px #2c3e5040;flex:1 1 320px;">
+                <div style="flex:2 1 340px;text-align:left;min-width:260px;">
+                    <h1 style="font-size:2.3rem;margin-bottom:0.7rem;color:#111;font-weight:800;letter-spacing:1px;">Welcome to Soccer!</h1>
+                    <p style="font-size:1.18rem;line-height:1.7;color:#111;max-width:520px;">New to soccer? Whether you're a fan or a player, explore beginner guides, match stats, and the latest news. <br><br>
+                    <span style="color:#111;font-weight:600;">Learn, play, analyze</span> — track your favorite teams and players with ease!</p>
+                </div>
+            </div>
+        </section>
+        <section class="soccer-features">
+            <div class="soccer-feature-card">
+                <img src="https://wp.i9sports.com/wp-content/uploads/2019/10/09-20-53-i9-Promo-9-14-2019_.jpg" alt="Kids playing soccer" style="width:100%;border-radius:1rem;margin-bottom:1rem;">
+                <h3>Getting Started</h3>
+                <p>Learn soccer basics, rules, and how to get involved in your community.</p>
+            </div>
+            <div class="soccer-feature-card">
+                <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Soccer training" style="width:100%;border-radius:1rem;margin-bottom:1rem;">
+                <h3>Beginner Drills</h3>
+                <p>Step-by-step guides and videos for your first passes, dribbles, and shots.</p>
+            </div>
+            <div class="soccer-feature-card">
+                <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=400&q=80" alt="Happy soccer player" style="width:100%;border-radius:1rem;margin-bottom:1rem;">
+                <h3>Fun & Motivation</h3>
+                <p>Read stories from new players and find out how soccer can be fun for everyone!</p>
+            </div>
+            <div class="soccer-feature-card">
+                <img src="https://images.unsplash.com/photo-1518098268026-4e89f1a2cd8e?auto=format&fit=crop&w=400&q=80" alt="Soccer community" style="width:100%;border-radius:1rem;margin-bottom:1rem;">
+                <h3>Join the Community</h3>
+                <p>Connect with others, ask questions, and share your progress in our friendly soccer community.</p>
+            </div>
+        </section>
+        <section class="soccer-features" style="margin-top:2rem;">
+            <div class="soccer-feature-card">
+                <i class="fas fa-futbol"></i>
+                <h3>Live Match Stats</h3>
+                <p>Track real-time scores, possession, shots, and more from top leagues around the world.</p>
+            </div>
+            <div class="soccer-feature-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Analytics & Insights</h3>
+                <p>Discover advanced analytics on players, teams, and matches to boost your soccer knowledge.</p>
+            </div>
+            <div class="soccer-feature-card">
+                <i class="fas fa-trophy"></i>
+                <h3>Records & Achievements</h3>
+                <p>Explore historical records, top scorers, and legendary moments in soccer history.</p>
+            </div>
+            <div class="soccer-feature-card">
+                <i class="fas fa-newspaper"></i>
+                <h3>Soccer News</h3>
+                <p>Read breaking news, interviews, and expert analysis from the pitch.</p>
+            </div>
+        </section>
+    </main>
+    </main>
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>RGStats</h4>
+                <p>Save your time, drop the stats NOW</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="js/app.js"></script>
+</body>
+</html>
+
+<script src="https://cdn.botpress.cloud/webchat/v3.0/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2025/07/09/01/20250709015554-XF350M4F.js"></script>

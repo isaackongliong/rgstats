@@ -19,22 +19,37 @@
         body {
             background: var(--background-light);
             color: var(--text-dark);
-            font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+            font-family: Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
         .main-header {
-            background: var(--primary-color);
+            background: #1d1d1d;
             color: var(--text-light);
-            box-shadow: 0 2px 12px #2c3e5040;
+            box-shadow: 0 2px 12px #63656640;
+            padding: 0;
+            height: 84px;
         }
-        .nav-container {
+        .logo h1 {
+            color: var(--text-light);
+            margin: 0;
+        }
+        .tagline {
+            color: var(--accent-color);
+            font-size: 1rem;
+            margin: 0;
+        }
+                .nav-container {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: flex-start;
             max-width: 1200px;
-            margin: 0 auto;
-            padding: 1.2rem 2rem;
+            margin: 0;
+            padding: 0;
+            height: 84px;
+        }
+        .nav-links {
+            margin-left: auto;
         }
         .logo h1 {
             color: var(--text-light);
@@ -50,74 +65,39 @@
             display: flex;
             gap: 1.5rem;
             margin: 0;
-            padding: 0;
             position: relative;
+           
         }
+
         .nav-links > li {
             position: relative;
         }
         .nav-links a {
             color: var(--text-light);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: normal;
             font-size: 1.08rem;
             padding: 0.4rem 1.1rem;
             border-radius: 0.7rem;
             transition: background 0.2s, color 0.2s;
             display: flex;
             align-items: center;
+            
         }
         .nav-links a.active,
         .nav-links a:hover {
-            background: var(--accent-color);
+            
             color: #fff;
         }
-        .dropdown {
-            position: relative;
-        }
-        .dropbtn {
-            cursor: pointer;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background: #fff;
-            min-width: 160px;
-            box-shadow: 0 8px 16px rgba(44,62,80,0.12);
-            border-radius: 0.7rem;
-            z-index: 100;
-            top: 110%;
-            left: 0;
-            padding: 0.5rem 0;
-        }
-        .dropdown-content li {
-            width: 100%;
-        }
-        .dropdown-content a {
-            color: var(--primary-color);
+
+        /* When hovering a nav link, fade other links to light grey */
+        .nav-links:hover a:not(:hover) {
             background: none;
-            border-radius: 0;
-            padding: 0.7rem 1.2rem;
-            font-size: 1.05rem;
-            font-weight: 500;
-            width: 100%;
-            display: block;
-            transition: background 0.2s, color 0.2s;
+            color: #bbb;
+            transition: color 0.2s;
         }
-        .dropdown-content a:hover {
-            background: var(--accent-color);
-            color: #fff;
-        }
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        .hero-section {
-            background: linear-gradient(120deg, #3498db 60%, #2c3e50 100%);
-            color: #fff;
-            padding: 3rem 1rem 2rem 1rem;
-            text-align: center;
-            border-radius: 0 0 2rem 2rem;
-        }
+
+
         .features-grid {
             display: flex;
             flex-wrap: wrap;
@@ -188,149 +168,90 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
     <header class="main-header">
         <nav class="nav-container">
-            <div class="logo">
-                <h1>RGStats</h1>
-                <p class="tagline">Drop the stats NOW</p>
+            <div class="logo" style="height: 100%; display: flex; align-items: center;">
+                <img src="RGstats.jpg" alt="RGStats Logo" style="height: 100%; max-height: 88px; width: auto; vertical-align: middle; border-radius: 0.5rem; box-shadow: 0 2px 8px #2c3e5022; display: inline-block; object-fit: contain;">
             </div>
             <ul class="nav-links">
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">Sports <i class="fas fa-caret-down"></i></a>
-                    <ul class="dropdown-content">
-                        <li><a href="swimming-stats.html">Swimming</a></li>
-                        <li><a href="tennisbot.html">Tennis</a></li>
-                        <!-- Add more sports here -->
-                    </ul>
-                </li>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#player-stats">Player Stats</a></li>
-                <li><a href="#predictions">Predictions</a></li>
-                <li><a href="#analysis">Analysis</a></li>
-                <li><a href="#chat">Stats Chat</a></li>
+                <li><a href="swimming-stats.html">Swimming</a></li>
+                <li><a href="tennisbot.html">Tennis</a></li>
+                <li><a href="soccer.html">Soccer</a></li>
+                <li><a href="handball.html">Handball</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="hero" class="hero-section">
-            <h1>Your All-In-One Sports Statistics Hub</h1>
-            <p>Live stats, predictions, and insights at your fingertips</p>
-        </section>
+      <!-- Hero Section: Who We Are -->
+      <section class="homepage-hero" style="background:#f4f6f8;padding:2.5rem 0 2rem 0;">
+        <div style="max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:2.5rem;">
+          <div style="flex:2 1 380px;min-width:320px;">
+            <h1 style="font-size:2.7rem;font-weight:700;color:#222;margin-bottom:1.1rem;">Welcome to RGStats</h1>
+            <p style="font-size:1.25rem;line-height:1.7;color:#2c3e50;margin-bottom:1.2rem;">We are a modern sports analytics platform dedicated to delivering real-time data, advanced statistics, and AI-powered insights for fans, athletes, and analysts. Our mission is to make sports data accessible, interactive, and actionable for everyone.</p>
+            <ul style="font-size:1.08rem;line-height:1.7;color:#222;margin-bottom:1.2rem;max-width:600px;">
+              <li><b>Comprehensive Coverage:</b> Swimming, tennis, soccer, handball, and more</li>
+              <li><b>AI-Powered Insights:</b> Predictive analytics, match summaries, and performance breakdowns</li>
+              <li><b>Interactive Visualizations:</b> Charts, tables, and news cards for the latest trends</li>
+              <li><b>Modern, Responsive Design:</b> Seamless experience on any device</li>
+            </ul>
+            <span style="color:#1976d2;font-weight:500;">Save your time, drop the stats NOW with RGStats!</span>
+          </div>
+          <div style="flex:1 1 320px;min-width:260px;text-align:center;">
+            <img src="https://img.olympics.com/images/image/private/t_s_pog_staticContent_hero_xl_2x/f_auto/primary/hhfs9tf9mck02d8ilnqq" alt="Sports Analytics" style="width:100%;max-width:340px;border-radius:1.2rem;box-shadow:0 2px 16px #2c3e5012;object-fit:cover;">
+          </div>
+        </div>
+      </section>
 
-        <section id="features" class="features-grid">
-            <div class="feature-card">
-                <i class="fas fa-trophy"></i>
-                <h3>Player Comparisons</h3>
-                <p>Compare players across seasons and sports</p>
+      <!-- News Dashboard Section -->
+      <section class="news-dashboard" style="background:#f4f6f8;padding:2.5rem 0;">
+        <div class="news-dashboard-grid" style="display:grid;grid-template-columns:320px 1fr 320px;gap:2.5rem;max-width:1600px;margin:0 auto;align-items:flex-start;">
+          <!-- Left Sidebar: Quick Links -->
+          <aside class="news-sidebar" style="background:#fff;border-radius:1.2rem;padding:1.5rem 1.2rem;box-shadow:0 2px 12px #e0e7ef;">
+            <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:1.2rem;">Quick Links</h3>
+            <ul style="list-style:none;padding:0;margin:0;">
+              <li style="margin-bottom:1.1rem;display:flex;align-items:center;gap:0.7rem;"><i class="fa-brands fa-dribbble" style="color:#6c63ff;font-size:1.3rem;"></i> Premier League</li>
+              <li style="margin-bottom:1.1rem;display:flex;align-items:center;gap:0.7rem;"><i class="fa-solid fa-futbol" style="color:#222;font-size:1.3rem;"></i> Champions League</li>
+              <li style="margin-bottom:1.1rem;display:flex;align-items:center;gap:0.7rem;"><i class="fa-solid fa-futbol" style="color:#222;font-size:1.3rem;"></i> Latest Transfer News</li>
+              <li style="margin-bottom:1.1rem;display:flex;align-items:center;gap:0.7rem;"><i class="fa-solid fa-users" style="color:#1976d2;font-size:1.3rem;"></i> ASEAN United FC</li>
+              <li style="margin-bottom:1.1rem;display:flex;align-items:center;gap:0.7rem;"><i class="fa-solid fa-futbol" style="color:#222;font-size:1.3rem;"></i> Toe Poke</li>
+              <li style="margin-bottom:1.1rem;display:flex;align-items:center;gap:0.7rem;"><i class="fa-solid fa-table-list" style="color:#1976d2;font-size:1.3rem;"></i> ESPN Cricinfo <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.95rem;"></i></li>
+              <li style="margin-bottom:1.1rem;display:flex;align-items:center;gap:0.7rem;"><i class="fa-solid fa-flag-checkered" style="color:#43aa8b;font-size:1.3rem;"></i> Formula 1</li>
+              <li style="margin-bottom:1.1rem;display:flex;align-items:center;gap:0.7rem;"><i class="fa-solid fa-baseball" style="color:#1976d2;font-size:1.3rem;"></i> Fantasy Baseball: Sign Up</li>
+              <li style="margin-bottom:1.1rem;display:flex;align-items:center;gap:0.7rem;"><i class="fa-solid fa-basketball" style="color:#e74c3c;font-size:1.3rem;"></i> Fantasy Women's Basketball</li>
+              <li style="margin-bottom:0;display:flex;align-items:center;gap:0.7rem;"><i class="fa-solid fa-trophy" style="color:#f9c846;font-size:1.3rem;"></i> Wimbledon Bracket</li>
+            </ul>
+          </aside>
+          <!-- Main News Card -->
+          <article class="main-news-card" style="background:#fff;border-radius:1.2rem;box-shadow:0 2px 12px #e0e7ef;overflow:hidden;">
+            <img src="https://a.espncdn.com/combiner/i?img=%2Fphoto%2F2025%2F0709%2Fr1516738_1296x518_5%2D2.jpg&w=1320&h=528&scale=crop&cquality=40&location=center&format=jpg" alt="Main News" style="width:100%;height:320px;object-fit:cover;">
+            <div style="padding:2rem 2rem 1.2rem 2rem;">
+              <h2 style="font-size:2rem;font-weight:700;margin:0 0 1.1rem 0;line-height:1.18;">Safuwan signing, impending Anderson Lopes arrival shows Sailors not resting on laurels</h2>
+              <div style="font-size:1.15rem;color:#222;margin-bottom:1.1rem;">Coming off a history-making season, Lion City Sailors are not wasting time in making big moves for the new campaign.</div>
+              <div style="font-size:0.98rem;color:#888;">2h • Gabriel Tan</div>
             </div>
-            <div class="feature-card">
-                <i class="fas fa-chart-line"></i>
-                <h3>Predictive Insights</h3>
-                <p>Get ahead with AI-powered predictions</p>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-newspaper"></i>
-                <h3>Match Summaries</h3>
-                <p>Auto-generated game analysis</p>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-robot"></i>
-                <h3>Stats Chatbot</h3>
-                <p>Ask questions, get instant answers</p>
-            </div>
-        </section>
-
-     
- <h3>AI Chatbot</h3>
-    <section id="chatbot-section" style="margin-top:2.5rem;max-width:500px;margin-left:auto;margin-right:auto;background:#f9fafc;padding:1.5rem 1rem;border-radius:1.2rem;box-shadow:0 2px 12px #7f5af022;">
-      <h3 style="margin-bottom:1rem;display:flex;align-items:center;gap:0.7rem;">
-        <img src="images/botlah.png" alt="Botlah the Bot" class="chatbot-avatar"> Ask Sport Bot AI
-      </h3>
-      <div id="chat-messages" style="min-height:60px;margin-bottom:1rem;"></div>
-      <form id="chat-form" style="display:flex;gap:0.5rem;">
-        <input id="chat-input" type="text" placeholder="Type your question..." style="flex:1;padding:0.5rem 1rem;border-radius:1rem;border:1px solid #e0e7ff;outline:none;" required />
-        <button type="submit" style="background:#7f5af0;color:#fff;border:none;border-radius:1rem;padding:0.5rem 1.2rem;font-weight:700;cursor:pointer;">Send</button>
-      </form>
-      <div id="chat-error" style="color:#ff3333;font-size:0.95rem;margin-top:0.5rem;"></div>
-    </section>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-         <script>
-      // TODO: Replace YOUR_SPACE and YOUR_CHATFLOW_ID with your own values below
-      //test
-      async function query(data) {
-        const response = await fetch(
-          "https://isaacklhr-C240huggingface.hf.space/api/v1/prediction/40bdcf7a-66c5-467f-a2ba-ade53633ab99",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-          }
-        );
-        const result = await response.json();
-        return result;
-      }
-      function renderMarkdown(md) {
-        // Use marked.js for full markdown support
-        if (window.marked) {
-          return window.marked.parse(md);
-        }
-        // fallback: basic markdown to HTML conversion
-        let html = md
-          .replace(/\*\*(.*?)\*\*/g, '<b>$1</b>') // bold
-          .replace(/\*(.*?)\*/g, '<i>$1</i>') // italics
-          .replace(/`([^`]+)`/g, '<code>$1</code>') // inline code
-          .replace(/\n/g, '<br>'); // line breaks
-        // Table: convert markdown table to HTML table (basic)
-        if (/^\s*\|.*\|/m.test(md)) {
-          html = html.replace(/((?:^\s*\|.*\|\s*\n?)+)/gm, function(table) {
-            const rows = table.trim().split(/\n/).filter(Boolean);
-            if (rows.length < 2) return table; // not a table
-            const header = rows[0].replace(/\|/g, ' ').trim().split(/\s{2,}/);
-            const aligns = rows[1];
-            const bodyRows = rows.slice(2).map(r => r.replace(/\|/g, ' ').trim().split(/\s{2,}/));
-            let htmlTable = '<table class="chat-table"><thead><tr>';
-            header.forEach(h => htmlTable += `<th>${h}</th>`);
-            htmlTable += '</tr></thead><tbody>';
-            bodyRows.forEach(row => {
-              htmlTable += '<tr>';
-              row.forEach(cell => htmlTable += `<td>${cell}</td>`);
-              htmlTable += '</tr>';
-            });
-            htmlTable += '</tbody></table>';
-            return htmlTable;
-          });
-        }
-        return html;
-      }
-      document.addEventListener('DOMContentLoaded', function() {
-        const form = document.getElementById('chat-form');
-        const input = document.getElementById('chat-input');
-        const messages = document.getElementById('chat-messages');
-        const errorDiv = document.getElementById('chat-error');
-        form.addEventListener('submit', async (e) => {
-          e.preventDefault();
-          const userMsg = input.value.trim();
-          if (!userMsg) return;
-          messages.innerHTML += `<div class='chat-msg user'><b>You:</b> ${userMsg}</div>`;
-          input.value = '';
-          errorDiv.textContent = '';
-          try {
-            messages.innerHTML += `<div class='chat-msg bot' style='color:#888;'>Sport Bot is typing...</div>`;
-            const response = await query({"question": userMsg});
-            let botMsg = response.text || JSON.stringify(response);
-            messages.innerHTML = messages.innerHTML.replace('Sport Bot is typing...','');
-            messages.innerHTML += `<div class='chat-msg bot'><b>Sport Bot:</b> ${renderMarkdown(botMsg)}</div>`;
-            messages.scrollTop = messages.scrollHeight;
-          } catch (err) {
-            errorDiv.textContent = 'Sorry, there was a problem contacting Sport Bot.';
-          }
-        });
-      });
-    </script>
-        
+          </article>
+          <!-- Right Sidebar: Top Headlines -->
+          <aside class="news-sidebar" style="background:#fff;border-radius:1.2rem;padding:1.5rem 1.2rem;box-shadow:0 2px 12px #e0e7ef;">
+            <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:1.2rem;"><i class="fa-solid fa-bars" style="margin-right:0.5rem;"></i>Top Headlines</h3>
+            <ul style="list-style:none;padding:0;margin:0;">
+              <li style="padding:0.4rem 0;border-bottom:1px solid #f1f1f1;">Gyökeres: Amorim's tactics 'suited me perfectly'</li>
+              <li style="padding:0.4rem 0;border-bottom:1px solid #f1f1f1;">Caicedo suffers late ankle injury in Chelsea win</li>
+              <li style="padding:0.4rem 0;border-bottom:1px solid #f1f1f1;">Teams can 'win' home advantage in UCL</li>
+              <li style="padding:0.4rem 0;border-bottom:1px solid #f1f1f1;">MPs approve Premier League, EFL regulator</li>
+              <li style="padding:0.4rem 0;border-bottom:1px solid #f1f1f1;">Horner sacked as Red Bull chief, team confirms</li>
+              <li style="padding:0.4rem 0;border-bottom:1px solid #f1f1f1;">Ohtani takes Miz deep but phenom fans 12 in win</li>
+              <li style="padding:0.4rem 0;border-bottom:1px solid #f1f1f1;">Sources: Jokic to delay extension talks until '26</li>
+              <li style="padding:0.4rem 0;border-bottom:1px solid #f1f1f1;">Ayton: Joining Doncic 'feels like a video game'</li>
+              <li style="padding:0.4rem 0;display:flex;align-items:center;gap:0.5rem;">
+                <i class="fa-solid fa-globe" style="color:#1976d2;"></i> ESPN on WhatsApp: Asian football news <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.95rem;"></i>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </section>
     </main>
 
     <footer class="main-footer">

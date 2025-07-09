@@ -24,11 +24,15 @@
       color: var(--text-dark);
     }
 
-    .main-header {
-      background: var(--primary-color);
-      color: var(--text-light);
-      box-shadow: 0 2px 12px #2c3e5040;
-    }
+        .main-header {
+            background: #1d1d1d;
+            color: var(--text-light);
+            box-shadow: 0 2px 12px #63656640;
+            padding: 0;
+            height: 84px;
+        }
+
+
 
     .logo h1 {
       color: var(--text-light);
@@ -41,14 +45,17 @@
       margin: 0;
     }
 
-
         .nav-container {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: flex-start;
             max-width: 1200px;
-            margin: 0 auto;
-            padding: 1.2rem 2rem;
+            margin: 0;
+            padding: 0;
+            height: 84px;
+        }
+        .nav-links {
+            margin-left: auto;
         }
         .logo h1 {
             color: var(--text-light);
@@ -64,66 +71,36 @@
             display: flex;
             gap: 1.5rem;
             margin: 0;
-            padding: 0;
             position: relative;
+           
         }
+
         .nav-links > li {
             position: relative;
         }
         .nav-links a {
             color: var(--text-light);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: normal;
             font-size: 1.08rem;
             padding: 0.4rem 1.1rem;
             border-radius: 0.7rem;
             transition: background 0.2s, color 0.2s;
             display: flex;
             align-items: center;
+            
         }
         .nav-links a.active,
         .nav-links a:hover {
-            background: var(--accent-color);
+            
             color: #fff;
         }
-        .dropdown {
-            position: relative;
-        }
-        .dropbtn {
-            cursor: pointer;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background: #fff;
-            min-width: 160px;
-            box-shadow: 0 8px 16px rgba(44,62,80,0.12);
-            border-radius: 0.7rem;
-            z-index: 100;
-            top: 110%;
-            left: 0;
-            padding: 0.5rem 0;
-        }
-        .dropdown-content li {
-            width: 100%;
-        }
-        .dropdown-content a {
-            color: var(--primary-color);
+
+        /* When hovering a nav link, fade other links to light grey */
+        .nav-links:hover a:not(:hover) {
             background: none;
-            border-radius: 0;
-            padding: 0.7rem 1.2rem;
-            font-size: 1.05rem;
-            font-weight: 500;
-            width: 100%;
-            display: block;
-            transition: background 0.2s, color 0.2s;
-        }
-        .dropdown-content a:hover {
-            background: var(--accent-color);
-            color: #fff;
-        }
-        .dropdown:hover .dropdown-content {
-            display: block;
+            color: #bbb;
+            transition: color 0.2s;
         }
 
     .tennis-hero {
@@ -205,109 +182,148 @@
   </style>
 </head>
 
-<body>
-      <header class="main-header">
-        <nav class="nav-container">
-            <div class="logo">
-                <h1>RGStats</h1>
-                <p class="tagline">Drop the stats NOW</p>
-            </div>
-            <ul class="nav-links">
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">Sports <i class="fas fa-caret-down"></i></a>
-                    <ul class="dropdown-content">
-                        <li><a href="swimming-stats.html">Swimming</a></li>
-                        <li><a href="tennisbot.html" class="active">Tennis</a></li>
-                        <!-- Add more sports here -->
-                    </ul>
-                </li>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#player-stats">Player Stats</a></li>
-                <li><a href="#predictions">Predictions</a></li>
-                <li><a href="#analysis">Analysis</a></li>
-                <li><a href="#chat">Stats Chat</a></li>
-            </ul>
-        </nav>
-    </header>
 
-  <main>
-    <section class="tennis-hero">
-      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2.5rem; max-width: 1100px; margin: 0 auto;">
-        <img src="https://images.unsplash.com/photo-1583772291225-d0eeae4f7dba?auto=format&fit=crop&w=800&q=80" alt="Welcome to Tennis" style="width:100%;max-width:380px;min-width:220px;border-radius:1.5rem;box-shadow:0 2px 12px #2c3e5040;flex:1 1 320px;">
-        <div style="flex:2 1 340px;text-align:left;min-width:260px;">
-          <h1 style="font-size:2.3rem;margin-bottom:0.7rem;color:#fff;font-weight:800;letter-spacing:1px;">Welcome to Tennis!</h1>
-          <p style="font-size:1.18rem;line-height:1.7;color:#eaf6fb;max-width:520px;">New to tennis? From beginner guides to match insights, we've got everything you need to rally, serve, and smash like a pro. <br><br>
-          <span style="color:#f1c40f;font-weight:600;">Learn, play, analyze</span> — track your stats and follow the world’s top matches with ease.</p>
+  <body>
+    <header class="main-header">
+      <nav class="nav-container">
+        <div class="logo" style="height: 100%; display: flex; align-items: center;">
+          <img src="RGstats.jpg" alt="RGStats Logo" style="height: 100%; max-height: 88px; width: auto; vertical-align: middle; border-radius: 0.5rem; box-shadow: 0 2px 8px #2c3e5022; display: inline-block; object-fit: contain;">
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="swimming-stats.html">Swimming</a></li>
+          <li><a href="tennisbot.html" class="active">Tennis</a></li>
+          <li><a href="soccer.html">Soccer</a></li>
+          <li><a href="handball.html">Handball</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="tennis-hero-section" style="background:linear-gradient(120deg,#2c3e50 60%,#3498db 100%);padding:3.5rem 0 2.5rem 0;">
+      <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:2.5rem;flex-wrap:wrap;">
+        <div style="flex:1 1 400px;min-width:320px;">
+          <h1 style="font-size:2.7rem;font-weight:800;color:#fff;margin:0 0 1.1rem 0;letter-spacing:-1px;">Ace Your Game with RGStats Tennis</h1>
+          <p style="font-size:1.25rem;color:#f7fafd;margin:0 0 1.5rem 0;max-width:600px;">Live scores, player stats, match analysis, and AI-powered predictions for every tennis fan. Track the Grand Slams, follow your favorite players, and chat with TennisBot for instant insights!</p>
+          <ul style="color:#fff;font-size:1.08rem;line-height:1.7;margin:0 0 1.5rem 1.2rem;max-width:600px;">
+            <li>ATP & WTA live scores and results</li>
+            <li>Player rankings and head-to-head stats</li>
+            <li>Match highlights and trending news</li>
+            <li>Interactive charts and analytics</li>
+            <li>Ask TennisBot for predictions and trivia</li>
+          </ul>
+        </div>
+        <div style="flex:1 1 320px;min-width:260px;text-align:center;">
+          <img src="https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2163072777-copy.jpg?c=original" alt="Tennis Hero" style="width:100%;max-width:480px;height:320px;object-fit:cover;border-radius:1.2rem;box-shadow:0 2px 16px #2c3e5040;background:#fff;">
         </div>
       </div>
     </section>
-
-    <section class="tennis-features">
-      <div class="tennis-feature-card">
-        <i class="fas fa-table-tennis"></i>
-        <h3>Rules & Scoring</h3>
-        <p>Understand the basics of tennis gameplay and scoring formats.</p>
-      </div>
-      <div class="tennis-feature-card">
-        <i class="fas fa-chart-line"></i>
-        <h3>Match Stats</h3>
-        <p>Live updates and breakdowns of ongoing ATP & WTA matches.</p>
-      </div>
-      <div class="tennis-feature-card">
-        <i class="fas fa-star"></i>
-        <h3>Player Rankings</h3>
-        <p>Track current world rankings and progress of your favorite players.</p>
-      </div>
-      <div class="tennis-feature-card">
-        <i class="fas fa-robot"></i>
-        <h3>Chat with TennisBot</h3>
-        <p>Ask anything — from match predictions to head-to-head stats!</p>
+    <section class="tennis-news-section" style="background:#f4f6f8;padding:2.5rem 0;">
+      <div style="max-width:1400px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr;gap:2.5rem;align-items:flex-start;">
+        <!-- Main News -->
+        <div>
+          <div class="news-card" style="background:#fff;border-radius:1.1rem;box-shadow:0 2px 12px #e0e7ef;overflow:hidden;margin-bottom:2rem;">
+            <img src="https://www.hindustantimes.com/ht-img/img/2025/07/07/550x309/TOPSHOT-TENNIS-GBR-WIMBLEDON-1_1751855177318_1751855191219.jpg" alt="Tennis Icon" style="width:100%;max-width:420px;height:220px;object-fit:cover;margin:2rem auto 0 auto;display:block;border-radius:1rem;box-shadow:0 2px 8px #2c3e5040;">
+            <div style="padding:1.5rem 2rem 1.2rem 2rem;">
+              <h2 style="font-size:2rem;font-weight:700;margin:0 0 1.1rem 0;line-height:1.18;">Alcaraz wins Wimbledon thriller in five sets</h2>
+              <div style="font-size:1.15rem;color:#222;margin-bottom:1.1rem;">Carlos Alcaraz outlasts Novak Djokovic in a dramatic Wimbledon final, clinching his second Grand Slam title in a five-set epic.</div>
+              <div style="font-size:0.98rem;color:#888;">2h • Wimbledon 2025</div>
+            </div>
+          </div>
+          <div class="news-card" style="background:#fff;border-radius:1.1rem;box-shadow:0 2px 12px #e0e7ef;overflow:hidden;">
+            <img src="https://res.cloudinary.com/ybmedia/image/upload/c_crop,e_improve,h_622,w_1108,x_526,y_0/c_fill,f_auto,h_900,q_auto,w_1600/v1/m/4/3/43ea4e26d2acfbf2db7b8ffd0ab2bbb6f42ad608/jul-5-2025-wimbledon-united-kingdom-iga-swiatek.jpg" alt="Tennis Trophy Icon" style="width:100%;max-width:420px;height:220px;object-fit:cover;margin:2rem auto 0 auto;display:block;border-radius:1rem;box-shadow:0 2px 8px #2c3e5040;">
+            <div style="padding:1.5rem 2rem 1.2rem 2rem;">
+              <h2 style="font-size:1.5rem;font-weight:700;margin:0 0 1.1rem 0;line-height:1.18;">Swiatek dominates French Open for 5th title</h2>
+              <div style="font-size:1.08rem;color:#222;margin-bottom:1.1rem;">Iga Swiatek continues her clay-court dominance, winning her fifth Roland Garros crown with a straight-sets victory.</div>
+              <div style="font-size:0.98rem;color:#888;">1d • Roland Garros</div>
+            </div>
+          </div>
+        </div>
+        <!-- Sidebar: Top Players -->
+        <aside style="background:#fff;border-radius:1.1rem;box-shadow:0 2px 12px #e0e7ef;padding:2rem 1.2rem;">
+          <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:1.2rem;">Top Players</h3>
+          <ul style="list-style:none;padding:0;margin:0;">
+            <li style="margin-bottom:1.1rem;display:flex;align-items:center;gap:0.7rem;">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Carlos_Alcaraz_2023_%28cropped%29.jpg" alt="Carlos Alcaraz" style="width:32px;height:32px;border-radius:50%;object-fit:cover;"> Carlos Alcaraz
+            </li>
+            <li style="margin-bottom:1.1rem;display:flex;align-items:center;gap:0.7rem;">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Novak_Djokovic_2019.jpg" alt="Novak Djokovic" style="width:32px;height:32px;border-radius:50%;object-fit:cover;"> Novak Djokovic
+            </li>
+            <li style="margin-bottom:1.1rem;display:flex;align-items:center;gap:0.7rem;">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Iga_%C5%9Awi%C4%85tek_%28Roland_Garros_2022%29.jpg" alt="Iga Swiatek" style="width:32px;height:32px;border-radius:50%;object-fit:cover;"> Iga Swiatek
+            </li>
+            <li style="margin-bottom:1.1rem;display:flex;align-items:center;gap:0.7rem;">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Coco_Gauff_%28Roland_Garros_2022%29.jpg" alt="Coco Gauff" style="width:32px;height:32px;border-radius:50%;object-fit:cover;"> Coco Gauff
+            </li>
+            <li style="margin-bottom:1.1rem;display:flex;align-items:center;gap:0.7rem;">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Jannik_Sinner_%28Roland_Garros_2022%29.jpg" alt="Jannik Sinner" style="width:32px;height:32px;border-radius:50%;object-fit:cover;"> Jannik Sinner
+            </li>
+            <li style="margin-bottom:0;display:flex;align-items:center;gap:0.7rem;">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Dominika_Cibulkova_2017_Wimbledon.jpg" alt="Dominika Cibulková" style="width:32px;height:32px;border-radius:50%;object-fit:cover;"> Dominika Cibulková (Slovakian Legend)
+            </li>
+          </ul>
+        </aside>
       </div>
     </section>
+    <div style="height: 3.5rem;"></div>
+      <main>
+        <!-- TennisBot chat embedded as a section within the page -->
+        <section class="chat-bot-section" style="max-width:900px;margin:3rem auto 2.5rem auto;padding:2rem 1rem;background:#fff;border-radius:1.2rem;box-shadow:0 4px 24px #2c3e5040;">
+          <div id="webchat" style="width:100%;min-width:220px;max-width:700px;height:480px;margin:0 auto;"></div>
+        </section>
+        <style>
+          @keyframes flash {
+            from { filter: brightness(1.2); }
+            to { filter: brightness(2.2); }
+          }
+          @media (max-width: 900px) {
+            .chat-bot-section {
+              max-width: 99vw;
+              padding: 1rem 0.2rem;
+            }
+            #webchat {
+              max-width: 99vw;
+              height: 340px;
+            }
+          }
+        </style>
+      </main>
 
-    <!-- ✅ Chatbot Section -->
-    <section id="chat" class="chat-section">
-      <div id="webchat"></div>
-    </section>
-  </main>
 
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h4>RGStats</h4>
-        <p>Save your time, drop the stats NOW</p>
+    <footer class="main-footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>RGStats</h4>
+          <p>Save your time, drop the stats NOW</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#privacy">Privacy Policy</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#privacy">Privacy Policy</a></li>
-        </ul>
-      </div>
-    </div>
-    <p style="margin-top: 1rem;">&copy; 2025 RGStats. All rights reserved.</p>
-  </footer>
+    </footer>
 
-  <!-- ✅ Botpress Chatbot Initialization -->
-  <script>
-    window.botpress.init({
-      botId: "98b6cef2-8a3c-4f1b-be80-5a1486105792",
-      clientId: "79acae7c-6140-4b0c-aa05-721e35f31fd0",
-      selector: "#webchat",
-      configuration: {
-        website: {},
-        email: {},
-        phone: {},
-        termsOfService: {},
-        privacyPolicy: {}
-      }
-    });
-
-    window.botpress.on("webchat:ready", () => {
-      window.botpress.open(); // Automatically open on page load
-    });
-  </script>
-
-</body>
+    <!-- ✅ Botpress Chatbot Initialization -->
+    <script src="https://cdn.botpress.cloud/webchat/v3.0/inject.js"></script>
+    <script>
+      window.botpress.init({
+        botId: "98b6cef2-8a3c-4f1b-be80-5a1486105792",
+        clientId: "79acae7c-6140-4b0c-aa05-721e35f31fd0",
+        selector: "#webchat",
+        configuration: {
+          website: {},
+          email: {},
+          phone: {},
+          termsOfService: {},
+          privacyPolicy: {}
+        }
+      });
+      window.botpress.on("webchat:ready", () => {
+        window.botpress.open();
+      });
+    </script>
+    <script src="js/app.js"></script>
+  </body>
 </html>
